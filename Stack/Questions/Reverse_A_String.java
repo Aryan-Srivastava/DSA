@@ -1,5 +1,3 @@
-package Questions;
-
 import java.util.Stack;
 
 public class Reverse_A_String {
