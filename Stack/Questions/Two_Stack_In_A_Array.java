@@ -1,3 +1,5 @@
+package Questions;
+
 class twoStacks{
 	private int arr[];
 	private int top1, top2;

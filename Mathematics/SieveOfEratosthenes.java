@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class SeiveOfErtosthenes {
+public class SieveOfEratosthenes {
     public static void main(String[] args) {
         boolean isPrime[] = sieve(20);
         for(int i =0; i<= 20; i++){
