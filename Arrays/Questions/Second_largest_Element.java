@@ -8,17 +8,16 @@ public class Second_largest_Element {
     }
  
     private static int second(int[] arr, int n) {
-        if(n <= 1) return Integer.MIN_VALUE;
-        int temp = 0, max = Integer.MIN_VALUE;
+        int second = 0, max = arr[0];
 
-        for(int i = 0; i < n; i++){
+        for(int i = 1; i < n; i++){
             if(arr[i] > max){
-                temp = max;
+                second = max;
                 max = arr[i];
             }
-            else if(arr[i] > temp && arr[i] != max)
-                temp = arr[i];
+            else if(arr[i] > second && arr[i] != max)
+                second = arr[i];
         }
-        return temp;
+        return second;
     }
 }
