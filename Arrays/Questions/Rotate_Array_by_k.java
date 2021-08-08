@@ -14,10 +14,10 @@ public class Rotate_Array_by_k {
         //1 2 3 4 5 6 7
         //k = 2;
         //[2 1] 3 4 5 6 7
-        reverse_array(arr, 0, k);
+        reverse_array(arr, 0, k-1);
         //the rotate the array from k to n-1
         //2 1 [7 6 5 4 3]
-        reverse_array(arr, k+1, length_of_array-1);
+        reverse_array(arr, k, length_of_array-1);
         //then rotate the whole array from beginning to end
         //3 4 5 6 7 1 2
         reverse_array(arr, 0, length_of_array-1);
