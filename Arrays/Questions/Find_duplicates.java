@@ -12,8 +12,8 @@ public class Find_duplicates {
 
     // Optimal method 1 - 
     // Hare and turtle method(Floyd's algorithm)
-    // Time complexity - O()
-    // Space complexity - O()
+    // Time complexity - O(2n)
+    // Space complexity - O(1)
 
     private static int find(int[] arr) {
         int slow = arr[0];
