@@ -2,9 +2,11 @@ import java.util.Arrays;
 
 public class SieveOfEratosthenes {
     public static void main(String[] args) {
-        boolean isPrime[] = sieve(20);
-        for(int i =0; i<= 20; i++){
-            System.out.println(i + " " +isPrime[i]);
+        boolean isPrime[] = sieve(100);
+        for(int i =0; i<= 100; i++){
+            if(isPrime[i]){
+                System.out.print(i + " ");
+            }
         }
     }
     static boolean[] sieve(int n ){
@@ -17,14 +19,17 @@ public class SieveOfEratosthenes {
         //F F T T F T F T F F F  T  F
         //    2 3   5   7        11
         boolean isPrime[] = new boolean[n+1];
-        Arrays.fill(isPrime, false);
+        Arrays.fill(isPrime, true);
         isPrime[0] = false;
         isPrime[1] = false;
         for(int i = 2; i*i <= n; i++){
-            for(int j = i; j <=n ; j+=i){
-                isPrime[j] = true;
+            if(isPrime[i]){   
+                for(int j = i*i; j <=n ; j+=i){
+                    isPrime[j] = false;
+                }
             }
         }
     return isPrime;
     }
 }
+// Time complexity - O(n log n(log n))
