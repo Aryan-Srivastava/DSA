@@ -41,8 +41,7 @@ public class Rotate_Matrix {
     //Method 2 -
     public static void rotateBy90(int[][] mat){
         transpose(mat);
-        for(int i = 0; i < mat.length; i++)
-            reverse(mat[i]);
+        reverseCol(mat);
     }
 
     private static void transpose(int[][] mat) {
@@ -55,11 +54,13 @@ public class Rotate_Matrix {
         }
     }
 
-    private static void reverse(int[] mat) {
-        for(int i = 0,j = mat.length - 1 ; i < j ; i++, j--){
-            int temp = mat[i];
+    private static void reverseCol(int[][] mat) {
+        int i = 0,j = mat.length - 1 ;
+        while(i < j){
+            int[] temp = mat[i];
             mat[i] = mat[j];
             mat[j] = temp;
+            i++; j--;
         }
     }
     //method 3 - 
