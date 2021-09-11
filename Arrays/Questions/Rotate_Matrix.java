@@ -20,28 +20,21 @@ public class Rotate_Matrix {
         }
         return false;
     }
+
     //method 1 - 
-    private static int[][] rotateMatrix(int[][] mat, int[][] target){
-        for(int row = 0; row < mat.length; row++){
-            for(int col = 0; col < mat[row].length; col++){
-                int temp = mat[row][col];
-                mat[row][col] = mat[col][row];
-                mat[row][col] = temp;
-            }
-        }
-        int start = 0, end = mat.length - 1;
-        while (start < end) {
-            int[] row = mat[start];
-            mat[start] = mat[end];
-            mat[end] = row;
-            start++; end--;
-        }
-        return mat;
+    private static int[][] rotateMatrix(int[][] mat){
+        int n = mat.length, m = mat[0].length;
+        int[][] ans = new int[n][m];
+        for(int i = 0; i < n; i++)
+            for(int j = 0; j < m; j++)
+                ans[j][m-1-i] = mat[i][j];
+        return ans;
     }
+
     //Method 2 -
     public static void rotateBy90(int[][] mat){
         transpose(mat);
-        reverseCol(mat);
+        swapCol(mat);
     }
 
     private static void transpose(int[][] mat) {
@@ -54,7 +47,7 @@ public class Rotate_Matrix {
         }
     }
 
-    private static void reverseCol(int[][] mat) {
+    private static void swapCol(int[][] mat) {
         int i = 0,j = mat.length - 1 ;
         while(i < j){
             int[] temp = mat[i];
@@ -63,9 +56,10 @@ public class Rotate_Matrix {
             i++; j--;
         }
     }
+    
     //method 3 - 
-    private static void rotateMatrix2(int[][] mat, int[][] target){
-        int n = mat.length, m = mat[0].length;
+    private static void rotateMatrix2(int[][] mat){
+        int n = mat.length;
         for(int i = 0; i < n/2; i++){
             int last = n-1-i;
             for(int j = i; j < last; j++){
