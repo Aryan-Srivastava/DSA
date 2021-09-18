@@ -22,14 +22,14 @@ public class Rotate_Matrix {
     }
 
     //method 1 - 
-    private static int[][] rotateMatrix(int[][] mat){
-        int n = mat.length, m = mat[0].length;
-        int[][] ans = new int[n][m];
-        for(int i = 0; i < n; i++)
-            for(int j = 0; j < m; j++)
-                ans[j][m-1-i] = mat[i][j];
-        return ans;
-    }
+    // private static int[][] rotateMatrix(int[][] mat){
+    //     int n = mat.length, m = mat[0].length;
+    //     int[][] ans = new int[n][m];
+    //     for(int i = 0; i < n; i++)
+    //         for(int j = 0; j < m; j++)
+    //             ans[j][m-1-i] = mat[i][j];
+    //     return ans;
+    // }
 
     //Method 2 -
     public static void rotateBy90(int[][] mat){
@@ -58,18 +58,18 @@ public class Rotate_Matrix {
     }
     
     //method 3 - 
-    private static void rotateMatrix2(int[][] mat){
-        int n = mat.length;
-        for(int i = 0; i < n/2; i++){
-            int last = n-1-i;
-            for(int j = i; j < last; j++){
-                int off = j - i;
-                int temp = mat[i][j];
-                mat[i][j] = mat[last-off][i];
-                mat[last-off][i] = mat[last][last-off];
-                mat[last][last-off] = mat[j][last];
-                mat[j][last] = temp;
-            }
-        }
-    }
+    // private static void rotateMatrix2(int[][] mat){
+    //     int n = mat.length;
+    //     for(int i = 0; i < n/2; i++){
+    //         int last = n-1-i;
+    //         for(int j = i; j < last; j++){
+    //             int off = j - i;
+    //             int temp = mat[i][j];
+    //             mat[i][j] = mat[last-off][i];
+    //             mat[last-off][i] = mat[last][last-off];
+    //             mat[last][last-off] = mat[j][last];
+    //             mat[j][last] = temp;
+    //         }
+    //     }
+    // }
 }
