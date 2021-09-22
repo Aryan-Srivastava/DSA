@@ -27,17 +27,26 @@ public class Find_All_Duplicates {
 
     //Optimal solution -
     
-    private static ArrayList<Integer> findDuplicates2(int[] arr) {
-        int n = arr.length;
-        ArrayList<Integer> list = new ArrayList<>();
-        int[] freq = new int[n];
-        for(int i = 0; i < n; i++){
-            freq[arr[i]-1]++;
+    private static List<Integer> findDuplicates2(int[] nums) {
+        int n = nums.length;
+        List<Integer> list = new ArrayList<>();
+        int i = 0;
+        while(i < n){
+            if(nums[i] != nums[nums[i]-1])
+                swap(nums, i, nums[i]-1);
+            else
+                i++;
         }
-        for(int i = 0; i < n; i++){
-            if(freq[i] > 1)
-                list.add(i+1);
+        for(int j = 0; j < n; j++){
+            if(nums[j] != j+1)
+                list.add(nums[j]);
         }
         return list;
+    }
+    
+    private static void swap(int[] nums, int i, int j){
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
     }
 }
