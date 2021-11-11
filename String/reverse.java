@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class reverse {
 
     public static void main(String[] args) {
-        String s = "I am Aryan Srivastava";
+        String s = "I am Aryan srivastava";
         rev(s);
     }
 
@@ -11,9 +11,10 @@ public class reverse {
         int i = 0, j = s.length() - 1;
         char[] arr = s.toCharArray();
         while (i < j) {
-            if(arr[i] == ' ') {
+            if(arr[i] == ' ') 
                 i++;
-            }
+            if(arr[j] == ' ')
+                j--;
             char temp = arr[i];
             arr[i] = arr[j];
             arr[j] = temp;
