@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class reverse {
 
     public static void main(String[] args) {
-        String s = "I am Aryan srivastava";
+        String s = "I am Aryan sri";
         rev(s);
     }
 
@@ -19,7 +19,6 @@ public class reverse {
             arr[i] = arr[j];
             arr[j] = temp;
             i++;
-            j--;
         }
          Arrays.toString(arr);
          System.out.println(arr);
