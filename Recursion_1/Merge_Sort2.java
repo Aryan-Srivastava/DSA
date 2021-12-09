@@ -35,12 +35,10 @@ public class Merge_Sort2 {
     static void sort(int[] arr, int start, int end) {
         if (start >= end)
             return;
-        if (start < end) {
-            int mid = (start + end) / 2;
-            sort(arr, start, mid);
-            sort(arr, mid + 1, end);
-            merge(arr, start, end);
-        }
+        int mid = (start + end) / 2;
+        sort(arr, start, mid);
+        sort(arr, mid + 1, end);
+        merge(arr, start, end);
     }
 
     public static void main(String[] args) {
